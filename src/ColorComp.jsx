@@ -3,7 +3,7 @@ import { useDrag } from "react-dnd";
 import { ITEM_TYPE } from "./config/constant";
 
 const ColorComp = ({ color }) => {
-  const [collected, drag] = useDrag(() => ({
+  const [, drag] = useDrag(() => ({
     type: ITEM_TYPE.color,
     item: { color },
   }));
@@ -11,11 +11,8 @@ const ColorComp = ({ color }) => {
   return (
     <div
       ref={drag}
-      {...collected}
+      className="color-tile"
       style={{
-        width: "30px",
-        height: "30px",
-        border: "1px solid black",
         backgroundColor: color,
       }}
     ></div>

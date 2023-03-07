@@ -26,12 +26,10 @@ const BgArea = ({ bgColor, setBgColor }) => {
   return (
     <div
       ref={drop}
+      className="bg-area"
       style={{
-        width: "200px",
-        height: "200px",
-        border: "1px solid black",
         backgroundColor:
-          isOver && canDrop && !!localBgColor ? localBgColor : bgColor,
+          isOver && canDrop && localBgColor ? localBgColor : bgColor,
       }}
     ></div>
   );
